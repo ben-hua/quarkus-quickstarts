@@ -7,7 +7,11 @@ import jakarta.ws.rs.Path;
 public class AdminResource {
 
     @GET
-    public String manage() {
-        return "granted";
+    public Person manage() {
+        return new Person("public", "admin");
     }
+
+    public record Person(String name, String address) {
+    }
+
 }
